@@ -157,7 +157,7 @@ class _ContactSectionState extends State<ContactSection> {
             fontFamily: 'Pretendard',
             fontSize: 20,
             fontWeight: FontWeight.bold,
-            color: Theme.of(context).colorScheme.onBackground,
+            color: Theme.of(context).colorScheme.onSurface,
           ),
         ),
         SizedBox(height: 16),
@@ -180,7 +180,7 @@ class _ContactSectionState extends State<ContactSection> {
               icon: BootstrapIcons.instagram,
               color: Color(0xFFE1306C),
               onTap: () {
-                _launchURL('https://linkedin.com/in/yourusername');
+                _launchURL('https://www.instagram.com/iconoding.dev?igsh=eW41MW13eWtic2w=');
               },
             ),
             SizedBox(width: 16),
@@ -190,7 +190,7 @@ class _ContactSectionState extends State<ContactSection> {
               icon: Icons.create_outlined,
               color: Color(0xFF03A9F4),
               onTap: () {
-                _launchURL('https://your-blog-url.com');
+                _launchURL('https://iconoding.tistory.com/');
               },
             ),
           ],

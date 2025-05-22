@@ -68,7 +68,7 @@ class _DeveloperLogoState extends State<DeveloperLogo> with SingleTickerProvider
             ),
             boxShadow: [
               BoxShadow(
-                color: Color(0xFF2563EB).withOpacity(0.3),
+                color: Color(0xFF2563EB).withValues(alpha:0.3),
                 offset: Offset(0, widget.size * 0.05),
                 blurRadius: widget.size * 0.1,
               ),
@@ -125,7 +125,7 @@ class _DeveloperLogoState extends State<DeveloperLogo> with SingleTickerProvider
         child: Text(
           "/>",
           style: TextStyle(
-            color: Colors.white.withOpacity(0.8),
+            color: Colors.white.withValues(alpha:0.8),
             fontWeight: FontWeight.bold,
             fontSize: widget.size * 0.25,
           ),
@@ -146,7 +146,7 @@ class CodeLinesPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color = Colors.white.withOpacity(0.15)
+      ..color = Colors.white.withValues(alpha:0.15)
       ..strokeWidth = size.width * 0.02
       ..style = PaintingStyle.stroke;
 

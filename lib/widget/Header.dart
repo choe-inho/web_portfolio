@@ -22,7 +22,7 @@ class Header extends StatelessWidget {
             horizontal: isMobile ? 16 : isTablet ? 24 : 32,
             vertical: 16,
           ),
-          color: Theme.of(context).colorScheme.surface.withOpacity(0.8),
+          color: Theme.of(context).colorScheme.surface.withValues(alpha:0.8),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

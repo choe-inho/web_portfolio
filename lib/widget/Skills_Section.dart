@@ -57,7 +57,7 @@ class SkillsSection extends StatelessWidget {
                         style: TextStyle(
                           fontFamily: 'Pretendard',
                           fontSize: 16,
-                          color: Theme.of(context).colorScheme.onBackground.withOpacity(0.7),
+                          color: Theme.of(context).colorScheme.onBackground.withValues(alpha:0.7),
                         ),
                         textAlign: TextAlign.center,
                       ),
@@ -181,7 +181,7 @@ class SkillsSection extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
-            color: Theme.of(context).shadowColor.withOpacity(0.05),
+            color: Theme.of(context).shadowColor.withValues(alpha:0.05),
             blurRadius: 10,
             offset: Offset(0, 4),
           ),
@@ -233,7 +233,7 @@ class SkillsSection extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: 'Pretendard',
                         fontSize: isDetailed ? 16 : 14,
-                        color: Theme.of(context).colorScheme.onSurface.withOpacity(0.7),
+                        color: Theme.of(context).colorScheme.onSurface.withValues(alpha:0.7),
                       ),
                     ),
                   ],
@@ -249,7 +249,7 @@ class SkillsSection extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: 'Pretendard',
                         fontSize: 14,
-                        color: Theme.of(context).colorScheme.onSurface.withOpacity(0.7),
+                        color: Theme.of(context).colorScheme.onSurface.withValues(alpha:0.7),
                       ),
                     ),
                   ),

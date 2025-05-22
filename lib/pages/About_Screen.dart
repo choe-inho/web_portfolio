@@ -45,7 +45,7 @@ class AboutScreen extends StatelessWidget {
                         style: TextStyle(
                           fontFamily: 'Pretendard',
                           fontSize: 18,
-                          color: Colors.white.withOpacity(0.9),
+                          color: Colors.white.withValues(alpha:0.9),
                         ),
                       ),
                     ],
@@ -208,7 +208,7 @@ class AboutScreen extends StatelessWidget {
           color: Theme.of(context).colorScheme.onBackground,
         ),
       ),
-      backgroundColor: Theme.of(context).colorScheme.primary.withOpacity(0.1),
+      backgroundColor: Theme.of(context).colorScheme.primary.withValues(alpha:0.1),
     );
   }
 }

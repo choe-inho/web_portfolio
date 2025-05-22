@@ -50,7 +50,7 @@ class HeroSection extends StatelessWidget {
           '안녕하세요,',
           style: TextStyle(
             fontFamily: 'Pretendard',
-            color: Colors.white.withOpacity(0.9),
+            color: Colors.white.withValues(alpha:0.9),
             fontSize: 18,
             fontWeight: FontWeight.w500,
           ),
@@ -86,7 +86,7 @@ class HeroSection extends StatelessWidget {
           '사용자 경험에 가치를 더하는 Flutter 개발자',
           style: TextStyle(
             fontFamily: 'Pretendard',
-            color: Colors.white.withOpacity(0.9),
+            color: Colors.white.withValues(alpha:0.9),
             fontSize: 16,
             fontWeight: FontWeight.w500,
             height: 1.5,
@@ -99,7 +99,7 @@ class HeroSection extends StatelessWidget {
           '모바일과 웹을 아우르는 크로스 플랫폼 앱을 개발하며, 사용자 중심의 직관적인 UI/UX를 구현합니다. 기술과 디자인의 조화를 통해 실용적이고 아름다운 디지털 경험을 창조합니다.',
           style: TextStyle(
             fontFamily: 'Pretendard',
-            color: Colors.white.withOpacity(0.8),
+            color: Colors.white.withValues(alpha:0.8),
             fontSize: 14,
             height: 1.6,
           ),
@@ -148,7 +148,7 @@ class HeroSection extends StatelessWidget {
                 '안녕하세요,',
                 style: TextStyle(
                   fontFamily: 'Pretendard',
-                  color: Colors.white.withOpacity(0.9),
+                  color: Colors.white.withValues(alpha:0.9),
                   fontSize: isTablet ? 20 : 24,
                   fontWeight: FontWeight.w500,
                 ),
@@ -184,7 +184,7 @@ class HeroSection extends StatelessWidget {
                 '사용자 경험에 가치를 더하는 Flutter 개발자',
                 style: TextStyle(
                   fontFamily: 'Pretendard',
-                  color: Colors.white.withOpacity(0.9),
+                  color: Colors.white.withValues(alpha:0.9),
                   fontSize: isTablet ? 18 : 22,
                   fontWeight: FontWeight.w500,
                   height: 1.5,
@@ -197,7 +197,7 @@ class HeroSection extends StatelessWidget {
                 '모바일과 웹을 아우르는 크로스 플랫폼 앱을 개발하며, 사용자 중심의 직관적인 UI/UX를 구현합니다. 기술과 디자인의 조화를 통해 실용적이고 아름다운 디지털 경험을 창조합니다.',
                 style: TextStyle(
                   fontFamily: 'Pretendard',
-                  color: Colors.white.withOpacity(0.8),
+                  color: Colors.white.withValues(alpha:0.8),
                   fontSize: isTablet ? 15 : 16,
                   height: 1.6,
                 ),

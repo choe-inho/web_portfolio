@@ -105,7 +105,7 @@ class FooterSection extends StatelessWidget {
             style: TextStyle(
               fontFamily: 'Pretendard',
               fontSize: 14,
-              color: Theme.of(context).colorScheme.onBackground.withValues(alpha: 0.6),
+              color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.6),
             ),
           ),
           SizedBox(height: 10),
@@ -116,7 +116,7 @@ class FooterSection extends StatelessWidget {
             style: TextStyle(
               fontFamily: 'Pretendard',
               fontSize: 14,
-              color: Theme.of(context).colorScheme.onBackground.withValues(alpha: 0.6),
+              color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.6),
             ),
           ),
         ],
@@ -148,7 +148,7 @@ class FooterLink extends StatelessWidget {
           style: TextStyle(
             fontFamily: 'Pretendard',
             fontSize: 14,
-            color: Theme.of(context).colorScheme.onBackground.withValues(alpha: 0.8),
+            color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.8),
           ),
         ),
       ),
