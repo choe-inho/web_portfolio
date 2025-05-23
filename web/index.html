@@ -1,47 +1,289 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
-
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
   <base href="$FLUTTER_BASE_HREF">
-
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
+  <meta name="description" content="최인호의 포트폴리오 - Flutter 개발자">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO 메타 태그 -->
+  <meta name="keywords" content="Flutter, 개발자, 포트폴리오, 모바일앱, 웹개발">
+  <meta name="author" content="최인호">
+  <meta property="og:title" content="최인호의 포트폴리오">
+  <meta property="og:description" content="사용자 경험에 가치를 더하는 Flutter 개발자">
+  <meta property="og:type" content="website">
 
   <!-- iOS meta tags & icons -->
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="web_portfolio">
+  <meta name="apple-mobile-web-app-title" content="최인호 포트폴리오">
 
   <!-- Favicon -->
-  <!-- 기본 파비콘 -->
   <link rel="icon" href="favicon.png">
   <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="48x48" href="icons/favicon-48x48.png">
-
-  <!-- iOS용 애플 터치 아이콘 -->
   <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
-
-  <!-- Android용 아이콘 -->
   <link rel="manifest" href="icons/site.webmanifest">
 
-  <title>web_portfolio</title>
-  <link rel="manifest" href="manifest.json">
+  <title>최인호의 포트폴리오 - Flutter 개발자</title>
+
+  <!-- GitHub Pages SPA 라우팅 스크립트 -->
+  <script type="text/javascript">
+    (function(l) {
+      if (l.search[1] === '/' ) {
+        var decoded = l.search.slice(1).split('&').map(function(s) { 
+          return s.replace(/~and~/g, '&')
+        }).join('?');
+        window.history.replaceState(null, null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+        );
+      }
+    }(window.location))
+  </script>
+
+  <!-- 로딩 페이지 스타일 -->
+  <style>
+    /* 기본 스타일 리셋 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #2563EB 0%, #8B5CF6 100%);
+      color: white;
+      overflow: hidden;
+    }
+
+    /* 로딩 컨테이너 */
+    #loading {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease-out;
+    }
+
+    /* 로고 애니메이션 */
+    .logo {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(45deg, #2563EB, #8B5CF6);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      font-weight: bold;
+      color: white;
+      margin-bottom: 32px;
+      animation: logoFloat 2s ease-in-out infinite;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    @keyframes logoFloat {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* 제목과 설명 */
+    .title {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      opacity: 0.9;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    /* 로딩 스피너 */
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      border-top: 3px solid white;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 16px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* 로딩 텍스트 */
+    .loading-text {
+      font-size: 14px;
+      opacity: 0.8;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.8; }
+      50% { opacity: 0.4; }
+    }
+
+    /* 프로그레스 바 */
+    .progress-container {
+      width: 200px;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 2px;
+      margin-top: 24px;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #fff, #f0f0f0);
+      border-radius: 2px;
+      animation: progress 3s ease-out forwards;
+    }
+
+    @keyframes progress {
+      0% { width: 0%; }
+      30% { width: 30%; }
+      60% { width: 60%; }
+      90% { width: 85%; }
+      100% { width: 100%; }
+    }
+
+    /* 코드 요소들 (배경 장식) */
+    .code-elements {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .code-element {
+      position: absolute;
+      color: rgba(255, 255, 255, 0.1);
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .code-element:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+    .code-element:nth-child(2) { top: 20%; right: 15%; animation-delay: 1s; }
+    .code-element:nth-child(3) { bottom: 20%; left: 20%; animation-delay: 2s; }
+    .code-element:nth-child(4) { bottom: 30%; right: 10%; animation-delay: 1.5s; }
+    .code-element:nth-child(5) { top: 50%; left: 5%; animation-delay: 3s; }
+    .code-element:nth-child(6) { top: 40%; right: 5%; animation-delay: 2.5s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.1; }
+      50% { transform: translateY(-20px) rotate(10deg); opacity: 0.2; }
+    }
+
+    /* 반응형 디자인 */
+    @media (max-width: 600px) {
+      .title { font-size: 24px; }
+      .subtitle { font-size: 14px; }
+      .logo { width: 60px; height: 60px; font-size: 24px; }
+      .progress-container { width: 150px; }
+    }
+
+    /* Flutter 앱이 로드되면 로딩 화면 숨김 */
+    .flutter-loaded #loading {
+      opacity: 0;
+      pointer-events: none;
+    }
+  </style>
 </head>
+
 <body>
+  <!-- 로딩 화면 -->
+  <div id="loading">
+    <!-- 배경 코드 요소들 -->
+    <div class="code-elements">
+      <div class="code-element">{ }</div>
+      <div class="code-element">&lt;/&gt;</div>
+      <div class="code-element">[ ]</div>
+      <div class="code-element">( )</div>
+      <div class="code-element">flutter</div>
+      <div class="code-element">dart</div>
+    </div>
+
+    <!-- 메인 로딩 콘텐츠 -->
+    <div class="logo">CI</div>
+    <h1 class="title">최인호의 포트폴리오</h1>
+    <p class="subtitle">사용자 경험에 가치를 더하는 Flutter 개발자</p>
+    
+    <div class="spinner"></div>
+    <p class="loading-text">포트폴리오를 준비하고 있습니다...</p>
+    
+    <div class="progress-container">
+      <div class="progress-bar"></div>
+    </div>
+  </div>
+
+  <!-- Flutter 앱이 여기 로드됩니다 -->
+  <script>
+    // Flutter 앱 로드 완료 감지
+    window.addEventListener('flutter-first-frame', function() {
+      document.body.classList.add('flutter-loaded');
+      
+      // 추가 지연 후 로딩 화면 완전 제거
+      setTimeout(function() {
+        const loading = document.getElementById('loading');
+        if (loading) {
+          loading.remove();
+        }
+      }, 500);
+    });
+
+    // 만약 flutter-first-frame 이벤트가 발생하지 않으면 타임아웃으로 처리
+    setTimeout(function() {
+      if (!document.body.classList.contains('flutter-loaded')) {
+        document.body.classList.add('flutter-loaded');
+        setTimeout(function() {
+          const loading = document.getElementById('loading');
+          if (loading) {
+            loading.remove();
+          }
+        }, 500);
+      }
+    }, 8000); // 8초 후 강제로 로딩 화면 제거
+
+    // 로딩 메시지 변경
+    const messages = [
+      '포트폴리오를 준비하고 있습니다...',
+      'Flutter 앱을 로딩중입니다...',
+      '거의 완료되었습니다...',
+      '잠시만 기다려주세요...'
+    ];
+    
+    let messageIndex = 0;
+    const loadingText = document.querySelector('.loading-text');
+    
+    const messageInterval = setInterval(function() {
+      if (document.body.classList.contains('flutter-loaded')) {
+        clearInterval(messageInterval);
+        return;
+      }
+      
+      messageIndex = (messageIndex + 1) % messages.length;
+      loadingText.textContent = messages[messageIndex];
+    }, 2000);
+  </script>
+
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>

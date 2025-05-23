@@ -55,7 +55,7 @@ class ProjectsSection extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: 'Pretendard',
                         fontSize: 16,
-                        color: Theme.of(context).colorScheme.onBackground.withValues(alpha: 0.7),
+                        color: Theme.of(context).colorScheme.surface.withValues(alpha: 0.7),
                       ),
                       textAlign: TextAlign.center,
                     ),
@@ -103,7 +103,7 @@ class ProjectsSection extends StatelessWidget {
       {
         'title': '스포츠 소셜 앱',
         'description': '실시간 채팅 및 네트 스포츠기능을 합친 일정관리 앱입니다. Provider를 이용한 상태관리와 웹소켓을 통한 실시간 통신기능을 구현했습니다.',
-        'image': 'assets/images/projects/ecommerce.jpg',
+        'image': 'https://cdn.imweb.me/upload/S20211213bcf9913dca729/f419314f3ea67.png',
         'tags': ['Flutter', 'Provider', 'Node.js', 'Communication'],
         'url': '/projects/nadal',
       },
@@ -120,11 +120,11 @@ class ProjectsSection extends StatelessWidget {
       projects.addAll(
         [
           {
-            'title': '유니티를 이용한 리듬게임',
-            'description': '실시간 채팅 및 네트 스포츠기능을 합친 일정관리 앱입니다. Provider를 이용한 상태관리와 웹소켓을 통한 실시간 통신기능을 구현했습니다.',
-            'image': 'assets/images/projects/ecommerce.jpg',
+            'title': '유니티를 이용한 리듬게임(클론코딩)',
+            'description': '처음 유니티를 접하고 프로젝트로 클론 코딩을 진행하였습니다.',
+            'image': 'https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FodhxT%2FbtsObmgdKVW%2FT9HEn5atHhmdX0JA566lc0%2Fimg.png',
             'tags': ['C#', 'Unity', 'Game'],
-            'url': '/projects/null',
+            'url': '/projects/unity',
           },
           {
             'title': '복권 번호 자동 생성기',
@@ -135,9 +135,9 @@ class ProjectsSection extends StatelessWidget {
           },
           {
             'title': '기록이 남지 않는 채팅',
-            'description': '오프라인에서 친구들과 할 수 있는 놀이의 앱 입니다. Getx를 이용한 상태관리와 로컬 저장소 sharedpreferences 이용하여 구현했습니다',
+            'description': '서버에서 캐시로만 주고받아 기록이 전혀 남지 않는 1대1 랜덤 채팅앱을 구현했습니다',
             'image': 'assets/images/projects/chat_app.jpg',
-            'tags': ['Flutter', 'Firebase', 'sharedpreferences', 'Game'],
+            'tags': ['Flutter', 'Node.js', 'Socket.io', 'Random Chat'],
             'url': '/projects/null',
           },
         ]

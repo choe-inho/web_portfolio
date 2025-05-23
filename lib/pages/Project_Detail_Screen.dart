@@ -56,9 +56,9 @@ class ProjectDetailScreen extends StatelessWidget {
         'description': '모바일 투두 앱은 사용자의 일정 관리와 생산성 향상을 목적으로 개발된 크로스 플랫폼 애플리케이션입니다. 단순한 할 일 관리를 넘어서 사용자 맞춤형 반복 업무를 추천하고, 성취감을 느낄 수 있는 게이미피케이션 요소를 도입했습니다.',
         'image': 'https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FzI9GN%2FbtsOae2zsfn%2FPuGpvzbZSLtUho1Dv7IBs1%2Fimg.png',
         'gallery': [
-          'assets/images/projects/awaken_quest_1.jpg',
-          'assets/images/projects/awaken_quest_2.jpg',
-          'assets/images/projects/awaken_quest_3.jpg',
+          'https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbvwJW2%2FbtsObuSDvVm%2FAkI1Ban9S8TnoqdiGsUaJ0%2Fimg.jpg',
+          'https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbrH2y1%2FbtsOaZTqmRx%2FY1Ks1p4ckytTjcho7hJcm1%2Fimg.jpg',
+          'https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fc19iSu%2FbtsOcltRmHH%2F6OYwu4SeZ8N5CsUHXZntu0%2Fimg.jpg',
         ],
         'technologies': ['Flutter', 'GetX', 'Firebase', 'Cloud Firestore', 'Firebase Auth'],
         'features': [
@@ -90,14 +90,14 @@ class ProjectDetailScreen extends StatelessWidget {
         'privacy' : 'awaken_quest'
       },
       'nadal': {
-        'title': '스포츠 소셜 앱 (Nadal)',
+        'title': '스포츠 소셜 앱 (타임네트)',
         'shortDescription': '실시간 채팅 및 네트 스포츠기능을 합친 일정관리 앱입니다.',
         'description': '스포츠 소셜 앱은 스포츠를 좋아하는 사람들이 모여 경기를 주선하고, 실시간으로 소통할 수 있는 소셜 플랫폼입니다. 지역별 스포츠 모임 생성, 참가자 모집, 실시간 채팅 등의 기능을 제공합니다.',
-        'image': 'assets/images/projects/nadal_hero.jpg',
+        'image': 'https://cdn.imweb.me/upload/S20211213bcf9913dca729/f419314f3ea67.png',
         'gallery': [
-          'assets/images/projects/nadal_1.jpg',
-          'assets/images/projects/nadal_2.jpg',
-          'assets/images/projects/nadal_3.jpg',
+          'https://play-lh.googleusercontent.com/uICN_-q81MbDBm4dXBANFnZcJBhandE0gkf9W0KJv_oVNHdWrff0SupV0gsaiZpUJ-I=w2560-h1440-rw',
+          'https://play-lh.googleusercontent.com/3SHnD32deqSPUnuwp6mImYtpGC3t2qmVNDSLAKOtrQDKHQfPygaanru1FU5vn07ZufXi=w2560-h1440-rw',
+          'https://play-lh.googleusercontent.com/fMtj8Ywq1UW6_wjQFkSkFUet-QehrAbEg-HkUx55HAX-5SdjAzlQeh3hDWhMA6wDOw=w2560-h1440-rw',
         ],
         'technologies': ['Flutter', 'Provider', 'Node.js', 'Socket.io', 'AWS', 'MongoDB'],
         'features': [
@@ -105,8 +105,6 @@ class ProjectDetailScreen extends StatelessWidget {
           '실시간 채팅 및 알림',
           '사용자 프로필 및 매칭 시스템',
           '경기 일정 관리',
-          '평점 및 리뷰 시스템',
-          '지도 기반 위치 서비스'
         ],
         'challenges': [
           {
@@ -118,15 +116,15 @@ class ProjectDetailScreen extends StatelessWidget {
             'description': 'AWS 클라우드 인프라를 활용하여 확장 가능한 서버 아키텍처를 구축했습니다.',
           },
           {
-            'title': '다양한 ',
-            'description': '정확한 위치 정보를 바탕으로 한 매칭 알고리즘을 개발했습니다.',
+            'title': '푸시 메시지 및 카카오 연결',
+            'description': '채팅과 다양한 알림을 위한 푸시메시지 시스템 구축 및 카카오를 이용한 로그인 및 공유 시스템',
           }
         ],
-        'duration': '2024.01 - 2025.6 (1년 6개월)',
+        'duration': '2024.01 - 2025.3 (1년 3개월)',
         'role': 'Full-stack 개발자',
         'githubUrl': null,
-        'playstoreUrl': null,
-        'appStoreUrl' : null,
+        'playstoreUrl': 'https://play.google.com/store/apps/details?id=com.gtran.timenet2&hl=ko',
+        'appStoreUrl' : 'https://apps.apple.com/kr/app/%ED%83%80%EC%9E%84%EB%84%A4%ED%8A%B8/id6737107364',
         'term' : null,
         'privacy' : null
       },
@@ -208,7 +206,41 @@ class ProjectDetailScreen extends StatelessWidget {
         'term' : null,
         'privacy' : null
       },
-
+      'unity': {
+        'title': '유니티 리듬게임 (클론 코딩 기반 프로젝트)',
+        'shortDescription': 'C#과 Unity를 활용하여 리듬게임을 구현한 프로젝트입니다.',
+        'description': '처음 접한 언어인 C#을 사용하여 Unity 리듬게임을 클론 코딩한 후, 직접 고안한 장애물 시스템을 구현하는 데 성공했습니다. 이 경험을 통해 Unity 엔진과 C# 언어에 대한 이해도를 비약적으로 향상시킬 수 있었습니다.',
+        'image': 'https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FodhxT%2FbtsObmgdKVW%2FT9HEn5atHhmdX0JA566lc0%2Fimg.png',
+        'gallery': null,
+        'technologies': ['Unity', 'C#', 'Game Development'],
+        'features': [
+          '클론 코딩을 통해 리듬게임 기본 구조 학습',
+          '유니티 툴과 3D 공간 개념 이해',
+          '직접 설계한 장애물 생성 로직 구현',
+        ],
+        'challenges': [
+          {
+            'title': 'C#과 Unity의 첫 경험',
+            'description': '이전까지 사용해보지 않았던 언어와 툴을 다루면서, 자료형, 클래스 구조, 이벤트 시스템 등 새로운 개념을 빠르게 익히는 것이 도전이었습니다.',
+          },
+          {
+            'title': '게임 내 오브젝트 충돌 및 타이밍 처리',
+            'description': '리듬게임 특성상 정확한 타이밍과 충돌 판정이 필요했기 때문에, 충돌 처리 로직과 타이밍 동기화 기능을 구현하는 데 있어 많은 테스트와 반복이 필요했습니다.',
+          },
+          {
+            'title': '장애물 커스터마이징 및 게임성 확장',
+            'description': '기존 클론코딩 내용을 넘어서 개인적으로 창의적인 장애물을 설계하고 적용하는 과정에서 많은 시행착오를 겪었지만, 이를 통해 Unity의 물리 시스템과 애니메이션 제어에 대한 실무적인 감각을 키울 수 있었습니다.',
+          }
+        ],
+        'duration': '2022.05 - 2022.06 (1개월)',
+        'role': '총괄 개발 (팀 프로젝트)',
+        'githubUrl': null,
+        'playstoreUrl': null,
+        'appStoreUrl' : null,
+        'term' : null,
+        'privacy' : null,
+        'blog' : 'https://iconoding.tistory.com/category/%EC%96%B8%EC%96%B4/C%23'
+      },
     };
 
     return projects[projectId];
@@ -561,6 +593,7 @@ class ProjectDetailScreen extends StatelessWidget {
 
               SizedBox(height: 60),
               // 프로젝트 갤러리
+              if(project['gallery'] != null)
               _buildSection(
                 context,
                 '프로젝트 갤러리',

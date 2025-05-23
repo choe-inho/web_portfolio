@@ -1,4 +1,3 @@
-import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
@@ -24,7 +23,7 @@ class SkillsSection extends StatelessWidget {
             horizontal: isMobile ? 20 : isTablet ? 40 : 80,
             vertical: 80,
           ),
-          color: Theme.of(context).colorScheme.background,
+          color: Theme.of(context).colorScheme.surface,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -57,7 +56,7 @@ class SkillsSection extends StatelessWidget {
                         style: TextStyle(
                           fontFamily: 'Pretendard',
                           fontSize: 16,
-                          color: Theme.of(context).colorScheme.onBackground.withValues(alpha:0.7),
+                          color: Theme.of(context).colorScheme.surface.withValues(alpha:0.7),
                         ),
                         textAlign: TextAlign.center,
                       ),
@@ -84,8 +83,8 @@ class SkillsSection extends StatelessWidget {
           {'name': 'Flutter', 'level': 0.9, 'iconData': Icons.flutter_dash, 'color': Color(0xFF02569B)}, // Flutter 파란색
           {'name': 'Dart', 'level': 0.9, 'iconData': Icons.code, 'color': Color(0xFF0175C2)}, // Dart 파란색
           {'name': 'JavaScript', 'level': 0.8, 'iconData': Icons.javascript, 'color': Color(0xFFF7DF1E)}, // JS 노란색
-          {'name': 'C++', 'level': 0.7, 'iconData': Icons.memory, 'color': Color(0xFF00599C)}, // C++ 파란색
-          {'name': 'Python', 'level': 0.8, 'iconData': Icons.data_object, 'color': Color(0xFF3776AB)}, // Python 파란색/노란색
+          {'name': 'C#', 'level': 0.6, 'iconData': Icons.memory, 'color': Color(0xFF00599C)}, // C++ 파란색
+          {'name': 'C++', 'level': 0.6, 'iconData': Icons.data_object, 'color': Color(0xFF3776AB)}, // Python 파란색/노란색
         ]
       },
       {
@@ -107,9 +106,9 @@ class SkillsSection extends StatelessWidget {
         [{
           'title': '도구 & 기타',
           'skills': [
-            {'name': 'Git/GitHub', 'level': 0.9, 'iconData': Icons.merge_type, 'color': Color(0xFF181717)}, // GitHub 검정색
-            {'name': 'VS Code', 'level': 0.8, 'iconData': Icons.code, 'color': Color(0xFF007ACC)}, // VS Code 파란색
-            {'name': 'Figma', 'level': 0.6, 'iconData': Icons.design_services, 'color': Color(0xFFF24E1E)}, // Figma 빨간색
+            {'name': 'Git/GitHub', 'level': 0.7, 'iconData': Icons.merge_type, 'color': Color(0xFF181717)}, // GitHub 검정색
+            {'name': 'VS Code', 'level': 0.9, 'iconData': Icons.code, 'color': Color(0xFF007ACC)}, // VS Code 파란색
+            {'name': 'Figma', 'level': 0.4, 'iconData': Icons.design_services, 'color': Color(0xFFF24E1E)}, // Figma 빨간색
             {'name': 'Android Studio', 'level': 0.9, 'iconData': Icons.android, 'color': Color(0xFF3DDC84)}, // Android 녹색
             {'name': 'AI Prompt', 'level': 0.8, 'iconData': Icons.auto_awesome, 'color': Color(0xFF10A37F)}, // OpenAI 계열 색상
           ]
@@ -181,7 +180,7 @@ class SkillsSection extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
-            color: Theme.of(context).shadowColor.withValues(alpha:0.05),
+            color: Theme.of(context).shadowColor.withValues(alpha:0.5),
             blurRadius: 10,
             offset: Offset(0, 4),
           ),
