@@ -178,7 +178,7 @@ class ProjectsSection extends StatelessWidget {
           borderRadius: BorderRadius.circular(12),
           boxShadow: [
             BoxShadow(
-              color: Theme.of(context).shadowColor.withValues(alpha: 0.1),
+              color: Theme.of(context).shadowColor.withValues(alpha: 0.5),
               blurRadius: 20,
               offset: Offset(0, 4),
             ),
@@ -210,13 +210,6 @@ class ProjectsSection extends StatelessWidget {
                         ),
                       ),
                     ),
-                    // 이미지 로드 실패 시 대체 이미지 표시
-                    // Image.asset(
-                    //   project['image'] as String,
-                    //   width: double.infinity,
-                    //   height: double.infinity,
-                    //   fit: BoxFit.cover,
-                    // ),
                   ],
                 ),
               ),
@@ -297,7 +290,7 @@ class AnimatedProjectsSection extends StatefulWidget {
   const AnimatedProjectsSection({super.key});
 
   @override
-  _AnimatedProjectsSectionState createState() => _AnimatedProjectsSectionState();
+  State<AnimatedProjectsSection> createState() => _AnimatedProjectsSectionState();
 }
 
 class _AnimatedProjectsSectionState extends State<AnimatedProjectsSection> with SingleTickerProviderStateMixin {
