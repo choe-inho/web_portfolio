@@ -83,18 +83,16 @@ class SkillsSection extends StatelessWidget {
           {'name': 'Flutter', 'level': 0.9, 'iconData': Icons.flutter_dash, 'color': Color(0xFF02569B)}, // Flutter 파란색
           {'name': 'Dart', 'level': 0.9, 'iconData': Icons.code, 'color': Color(0xFF0175C2)}, // Dart 파란색
           {'name': 'JavaScript', 'level': 0.8, 'iconData': Icons.javascript, 'color': Color(0xFFF7DF1E)}, // JS 노란색
-          {'name': 'C#', 'level': 0.6, 'iconData': Icons.memory, 'color': Color(0xFF00599C)}, // C++ 파란색
+          {'name': 'Node.js', 'level': 0.6, 'iconData': Icons.memory, 'color': Color(0xFF00599C)}, // C++ 파란색
           {'name': 'C++', 'level': 0.6, 'iconData': Icons.data_object, 'color': Color(0xFF3776AB)}, // Python 파란색/노란색
         ]
       },
       {
-        'title': '백엔드 & 데이터베이스',
+      'title': '클라우드 서비스',
         'skills': [
           {'name': 'Firebase', 'level': 0.85, 'iconData': Icons.local_fire_department, 'color': Color(0xFFFFCA28)}, // Firebase 노란색
-          {'name': 'RESTful API', 'level': 0.8, 'iconData': Icons.api, 'color': Color(0xFF2196F3)}, // 파란색
           {'name': 'AWS', 'level': 0.7, 'iconData': Icons.cloud, 'color': Color(0xFF232F3E)}, // AWS 검정색
-          {'name': 'Node.js', 'level': 0.8, 'iconData': Icons.device_hub, 'color': Color(0xFF339933)}, // Node.js 녹색
-          {'name': 'Maria DB', 'level': 0.8, 'iconData': Icons.storage, 'color': Color(0xFF003545)}, // MariaDB 색상
+          {'name': 'Maria DB', 'level': 0.8, 'iconData': Icons.device_hub, 'color': Color(0xFF339933)}, // Node.js 녹색
         ]
       },
 
@@ -110,7 +108,6 @@ class SkillsSection extends StatelessWidget {
             {'name': 'VS Code', 'level': 0.9, 'iconData': Icons.code, 'color': Color(0xFF007ACC)}, // VS Code 파란색
             {'name': 'Figma', 'level': 0.4, 'iconData': Icons.design_services, 'color': Color(0xFFF24E1E)}, // Figma 빨간색
             {'name': 'Android Studio', 'level': 0.9, 'iconData': Icons.android, 'color': Color(0xFF3DDC84)}, // Android 녹색
-            {'name': 'AI Prompt', 'level': 0.8, 'iconData': Icons.auto_awesome, 'color': Color(0xFF10A37F)}, // OpenAI 계열 색상
           ]
         },
         {
@@ -118,8 +115,6 @@ class SkillsSection extends StatelessWidget {
           'skills': [
             {'name': 'Provider', 'level': 0.9, 'iconData': Icons.account_tree, 'color': Color(0xFF4CAF50)}, // 녹색
             {'name': 'GetX', 'level': 0.9, 'iconData': Icons.speed, 'color': Color(0xFF00B8D4)}, // 청록색
-            {'name': 'Bloc', 'level': 0.4, 'iconData': Icons.view_stream, 'color': Color(0xFF6D61E7)}, // 보라색
-            {'name': 'RiverPod', 'level': 0.5, 'iconData': Icons.stream, 'color': Color(0xFF3FC5F0)}, // 하늘색
             {'name': 'MVC/MVVM', 'level': 0.8, 'iconData': Icons.architecture, 'color': Color(0xFF607D8B)}, // 회색
           ]
         },]
@@ -307,7 +302,7 @@ class AnimatedSkillsSection extends StatefulWidget {
   });
 
   @override
-  _AnimatedSkillsSectionState createState() => _AnimatedSkillsSectionState();
+  State<AnimatedSkillsSection> createState() => _AnimatedSkillsSectionState();
 }
 
 class _AnimatedSkillsSectionState extends State<AnimatedSkillsSection> with SingleTickerProviderStateMixin {
@@ -357,13 +352,13 @@ class ScrollObserver extends StatefulWidget {
   final bool onceOnly;
 
   const ScrollObserver({
-    Key? key,
+    super.key,
     required this.child,
     this.onceOnly = true,
-  }) : super(key: key);
+  });
 
   @override
-  _ScrollObserverState createState() => _ScrollObserverState();
+  State<ScrollObserver> createState() => _ScrollObserverState();
 }
 
 class _ScrollObserverState extends State<ScrollObserver> with SingleTickerProviderStateMixin {

@@ -97,7 +97,7 @@ class ProjectsSection extends StatelessWidget {
         'title': '모바일 투두 앱',
         'description': '사용자가 해야 할 일을 기록하는것과 더불어 사용자 맞춤 특정 반복적인 할일 주는 앱입니다. GetX를 이용한 상태관리와 Firebase를 활용한 데이터 저장 및 사용자 관리 기능을 구현했습니다',
         'image': 'https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FzI9GN%2FbtsOae2zsfn%2FPuGpvzbZSLtUho1Dv7IBs1%2Fimg.png',
-        'tags': ['Flutter', 'Getx', 'Firebase', 'Todo'],
+        'tags': ['Flutter', 'GetX', 'Firebase', 'Todo'],
         'url': '/projects/awaken_quest',
       },
       {
@@ -109,9 +109,9 @@ class ProjectsSection extends StatelessWidget {
       },
       {
         'title': '오프라인 게임 앱',
-        'description': '오프라인에서 친구들과 할 수 있는 놀이의 앱 입니다. Getx를 이용한 상태관리와 로컬 저장소 sharedpreferences 이용하여 구현했습니다',
+        'description': '오프라인에서 친구들과 할 수 있는 놀이의 앱 입니다. Getx를 이용한 상태관리와 로컬 저장소 SharedPreferences 이용하여 구현했습니다',
         'image': 'https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbtQAfh%2FbtsN9JhJkll%2FuyGfG8UL4pqQZ08c4ZVpYk%2Fimg.png',
-        'tags': ['Flutter', 'Firebase', 'sharedpreferences', 'Game'],
+        'tags': ['Flutter', 'GetX', 'SharedPreferences', 'Game'],
         'url': '/projects/amity',
       },
     ];
@@ -137,7 +137,7 @@ class ProjectsSection extends StatelessWidget {
             'title': '기록이 남지 않는 채팅',
             'description': '서버에서 캐시로만 주고받아 기록이 전혀 남지 않는 1대1 랜덤 채팅앱을 구현했습니다',
             'image': 'assets/images/projects/chat_app.jpg',
-            'tags': ['Flutter', 'Node.js', 'Socket.io', 'Random Chat'],
+            'tags': ['Flutter', 'Node.js', 'WebSocket', 'Random Chat'],
             'url': '/projects/null',
           },
         ]

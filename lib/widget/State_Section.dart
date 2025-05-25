@@ -118,13 +118,13 @@ class CounterAnimation extends StatefulWidget {
   final TextStyle style;
 
   const CounterAnimation({
-    Key? key,
+    super.key,
     required this.endValue,
     required this.style,
-  }) : super(key: key);
+  });
 
   @override
-  _CounterAnimationState createState() => _CounterAnimationState();
+  State<CounterAnimation> createState() => _CounterAnimationState();
 }
 
 class _CounterAnimationState extends State<CounterAnimation> with SingleTickerProviderStateMixin {

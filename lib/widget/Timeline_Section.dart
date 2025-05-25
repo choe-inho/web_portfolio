@@ -317,11 +317,11 @@ class TimelineSection extends StatelessWidget {
         'place': '주식회사 에핀',
         'description': '크로스 플랫폼 모바일 개발, 제품 기획, 설계, 개발, 성능 최적화 작업',
         'isEducation': false,
-        'skills': ['Flutter', 'Dart', 'AWS', 'PM', 'Node.js', 'API'],
+        'skills': ['Flutter', 'Dart', 'AWS', 'PM', 'Node.js'],
       },
       {
         'period': '2017 - 2023',
-        'title': '소프트웨어 공학 석사',
+        'title': '소프트웨어 공학 학사',
         'place': '경성대학교',
         'description': '경성대학교 소프트웨어 학과 졸업 및 (주)지트랜 하계 장기 현장실습 모바일 프론트엔드 개발',
         'isEducation': true,

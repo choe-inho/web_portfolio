@@ -60,7 +60,7 @@ class ProjectDetailScreen extends StatelessWidget {
           'https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbrH2y1%2FbtsOaZTqmRx%2FY1Ks1p4ckytTjcho7hJcm1%2Fimg.jpg',
           'https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fc19iSu%2FbtsOcltRmHH%2F6OYwu4SeZ8N5CsUHXZntu0%2Fimg.jpg',
         ],
-        'technologies': ['Flutter', 'GetX', 'Firebase', 'Cloud Firestore', 'Firebase Auth'],
+        'technologies': ['Flutter', 'GetX', 'Firebase', 'Effect', 'Todo'],
         'features': [
           '직관적인 할 일 추가 및 관리',
           '사용자 맞춤형 반복 업무 추천',
@@ -78,13 +78,13 @@ class ProjectDetailScreen extends StatelessWidget {
           },
           {
             'title': '다양한 이팩트 위젯 구현',
-            'description': '사용자의 재미를 위해 이팩트 ',
+            'description': '사용자의 재미를 위해 이팩트',
           }
         ],
         'duration': '2025.05 - 2025.06 (1개월)',
         'role': 'Flutter 개발자 (개인 프로젝트)',
         'githubUrl': 'https://github.com/choe-inho/awaken_quest',
-        'playstoreUrl': 'https://play.google.com/store/apps/details?id=com.example.awaken_quest',
+        'playstoreUrl': '',
         'appStoreUrl' : null,
         'term' : 'awaken_quest',
         'privacy' : 'awaken_quest'
@@ -99,7 +99,7 @@ class ProjectDetailScreen extends StatelessWidget {
           'https://play-lh.googleusercontent.com/3SHnD32deqSPUnuwp6mImYtpGC3t2qmVNDSLAKOtrQDKHQfPygaanru1FU5vn07ZufXi=w2560-h1440-rw',
           'https://play-lh.googleusercontent.com/fMtj8Ywq1UW6_wjQFkSkFUet-QehrAbEg-HkUx55HAX-5SdjAzlQeh3hDWhMA6wDOw=w2560-h1440-rw',
         ],
-        'technologies': ['Flutter', 'Provider', 'Node.js', 'Socket.io', 'AWS', 'MongoDB'],
+        'technologies': ['Flutter', 'Provider', 'Node.js', 'Socket.io', 'AWS'],
         'features': [
           '지역별 스포츠 모임 생성 및 참가',
           '실시간 채팅 및 알림',
@@ -138,7 +138,7 @@ class ProjectDetailScreen extends StatelessWidget {
           'https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcqcsJt%2FbtsN8qKopF2%2Fo6yISVzCoEGJdT0I18yVjk%2Fimg.png',
           'https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbasQ9r%2FbtsN8tHdip9%2FqEkp71VniUq4LOLpPii2XK%2Fimg.png',
         ],
-        'technologies': ['Flutter', 'GetX', 'SharedPreferences', 'Hive', 'Custom Animations'],
+        'technologies': ['Flutter', 'GetX', 'SharedPreferences'],
         'features': [
           '4가지 이루어진 게임',
           '오프라인 완전 지원',
@@ -426,19 +426,19 @@ class ProjectDetailScreen extends StatelessWidget {
               _buildActionButton(
                 'GitHub',
                 Icons.code,
-                    () => _launchURL(project['githubUrl'] as String),
+                    () => _launchURL(project['githubUrl'] as String, context),
               ),
             if (project['playstoreUrl'] != null)
               _buildActionButton(
                 'Play Store',
                 Icons.android,
-                    () => _launchURL(project['playstoreUrl'] as String),
+                    () => _launchURL(project['playstoreUrl'] as String, context),
               ),
             if (project['appStoreUrl'] != null)
               _buildActionButton(
                 'GitHub',
                 Icons.apple,
-                    () => _launchURL(project['appStoreUrl'] as String),
+                    () => _launchURL(project['appStoreUrl'] as String, context),
               ),
 
             if (project['term'] != null)
@@ -747,7 +747,47 @@ class ProjectDetailScreen extends StatelessWidget {
     );
   }
 
-  void _launchURL(String url) async {
+  void _launchURL(String url, BuildContext context) async {
+    if(url.isEmpty){
+      showDialog(context: context, builder: (context)=> Dialog(
+        child: Container(
+          padding: EdgeInsets.all(15),
+          width: 400,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Row(
+                children: [
+                  Icon(Icons.info, color: Theme.of(context).primaryColor, size: 30,),
+                  SizedBox(
+                    width: 8,
+                  ),
+                  Text('경고', style: Theme.of(context).textTheme.labelLarge,)
+                ],
+              ),
+              SizedBox(height: 12,),
+              Text('준비 중인 정보입니다', style: Theme.of(context).textTheme.titleMedium,),
+              SizedBox(height: 24,),
+              InkWell(
+                onTap: ()=> context.pop(),
+                child: Container(
+                  height: 38,
+                  width: 400,
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).primaryColor,
+                    borderRadius: BorderRadius.circular(15)
+                  ),
+                  alignment: Alignment.center,
+                  child: Text('확인', style: Theme.of(context).textTheme.titleMedium?.copyWith(color: Theme.of(context).colorScheme.onPrimary),),
+                ),
+              )
+            ],
+          ),
+        ),
+      ));
+      return;
+    }
+
     final Uri uri = Uri.parse(url);
     if (await canLaunchUrl(uri)) {
       await launchUrl(uri);
