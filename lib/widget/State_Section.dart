@@ -14,7 +14,7 @@ class StatsSection extends StatelessWidget {
         // 통계 항목 리스트
         final stats = [
           {
-            'number': '10+',
+            'number': '6+',
             'title': '완료한 프로젝트',
             'icon': Icons.check_circle_outline,
           },
