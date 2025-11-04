@@ -124,13 +124,8 @@ class AboutScreen extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
             color: Colors.grey[300],
-          ),
-          child: Center(
-            child: Icon(
-              Icons.person,
-              size: 80,
-              color: Colors.grey[600],
-            ),
+            image: DecorationImage(
+            image: NetworkImage('https://img1.daumcdn.net/thumb/C428x428/?scode=mtistory2&fname=https%3A%2F%2Ftistory1.daumcdn.net%2Ftistory%2F5285127%2Fattach%2F5db0749a5a30415180b35f7c8fc34d84'))
           ),
         ),
       ),
