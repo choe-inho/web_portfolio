@@ -1,27 +1,34 @@
-name: Deploy Iconoding Village to GitHub Pages
+name: Deploy Flutter Web to GitHub Pages
 
-# The site is the self-contained pixel village in ./site (one HTML file + icons).
-# The Flutter source in lib/ is kept in the repo but is no longer what gets published.
 on:
   push:
     branches: [ main ]
   workflow_dispatch:
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: true
-
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.29.3'
+          channel: 'stable'
+
+      - name: Get dependencies
+        run: flutter pub get
+
+      - name: Build web
+        run: flutter build web --release --base-href "/web_portfolio/"
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -29,7 +36,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './site'
+          path: './build/web'
 
       - name: Deploy to GitHub Pages
         id: deployment
